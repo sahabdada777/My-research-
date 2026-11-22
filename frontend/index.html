@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="RESEARCHER HU — AI-powered academic research workspace.">
+  <title>RESEARCHER HU | Research Smarter. Discover More.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="brand-mark">R</span><span>RESEARCHER <b>HU</b><small>AI-POWERED ACADEMIC RESEARCH</small></span></a>
+  <nav><a href="#features">Features</a><a href="#tools">AI Tools</a><a href="#how">How it works</a></nav>
+  <div class="nav-actions"><button class="btn btn-quiet" id="navLogin">Log in</button><button class="btn btn-primary" id="navSignup">Get started</button></div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">YOUR ACADEMIC WORKSPACE, REIMAGINED</span>
+    <h1>Research smarter.<br><span>Discover more.</span></h1>
+    <p>Bring your academic workflow together with AI assistance for research writing, literature reviews, methodology, peer review and data analysis.</p>
+    <div class="hero-actions"><button class="btn btn-primary btn-large" id="heroStart">Start exploring</button><a class="text-link" href="#tools">Explore AI tools <span>→</span></a></div>
+    <div class="trust-line"><span>For students</span><i></i><span>Researchers</span><i></i><span>Faculty</span></div>
+  </div>
+  <div class="hero-visual">
+    <div class="visual-glow"></div>
+    <div class="workspace-card">
+      <div class="workspace-head"><span class="dots">● ● ●</span><span>Research workspace</span><span class="live-dot">●</span></div>
+      <div class="workspace-body">
+        <div class="mini-label">YOUR NEXT RESEARCH TASK</div>
+        <h3>Build a stronger research paper</h3>
+        <div class="progress-row"><span>Research workflow</span><b>Ready to begin</b></div>
+        <div class="progress"><span></span></div>
+        <div class="mini-tools"><span>✦ Literature review</span><span>⌁ Methodology</span><span>▤ Peer review</span></div>
+      </div>
+    </div>
+    <div class="floating-chip chip-one">✦ Writing assistant</div><div class="floating-chip chip-two">⌁ Research analysis</div>
+  </div>
+</section>
+
+<section class="stats-strip"><div><b>One workspace</b><span>for your research journey</span></div><div><b>Specialized tools</b><span>for focused academic tasks</span></div><div><b>Hindi + English</b><span>work in your preferred language</span></div></section>
+
+<section class="section" id="features">
+  <div class="section-heading"><span class="eyebrow">A CONNECTED WORKFLOW</span><h2>Everything you need to move research forward</h2><p>Work through the key stages of academic research in one organized place.</p></div>
+  <div class="feature-grid">
+    <article class="feature-card"><span class="feature-icon">✦</span><h3>Research writing</h3><p>Draft and improve academic content while keeping your evidence and argument at the centre.</p></article>
+    <article class="feature-card"><span class="feature-icon">⌕</span><h3>Literature review</h3><p>Organize supplied studies, synthesize themes and identify gaps that need further verification.</p></article>
+    <article class="feature-card"><span class="feature-icon">⌁</span><h3>Methodology support</h3><p>Develop research designs, sampling plans, instruments and analysis procedures.</p></article>
+    <article class="feature-card"><span class="feature-icon">▤</span><h3>Peer review</h3><p>Get structured feedback on issues that are actually present in your manuscript.</p></article>
+    <article class="feature-card"><span class="feature-icon">▥</span><h3>Data analysis</h3><p>Interpret the data you provide and distinguish calculated results from explanation.</p></article>
+    <article class="feature-card"><span class="feature-icon">❝</span><h3>Citation integrity</h3><p>Format supplied references and flag missing details instead of inventing sources.</p></article>
+  </div>
+</section>
+
+<section class="section tools-section" id="tools">
+  <div class="section-heading"><span class="eyebrow">RESEARCHER HU AI STUDIO</span><h2>Choose your research tool</h2><p>Select a specialized assistant and describe what you want to work on.</p></div>
+  <div class="studio">
+    <aside class="tool-list">
+      <button class="tool-tab active" data-module="general">✦ Academic Assistant</button>
+      <p class="tool-group">WRITING AI</p>
+      <button class="tool-tab" data-module="abstract">Abstract Generator</button>
+      <button class="tool-tab" data-module="introduction">Introduction Writer</button>
+      <button class="tool-tab" data-module="literature">Literature Review Writer</button>
+      <button class="tool-tab" data-module="methodology">Methodology Writer</button>
+      <button class="tool-tab" data-module="results">Results & Discussion</button>
+      <button class="tool-tab" data-module="conclusion">Conclusion & Recommendations</button>
+      <button class="tool-tab" data-module="paraphrase">Academic Paraphrasing</button>
+      <button class="tool-tab" data-module="language">Academic Language Improver</button>
+      <button class="tool-tab" data-module="paper">Research Paper Builder</button>
+      <button class="tool-tab" data-module="thesis">Thesis Chapter Writer</button>
+      <p class="tool-group">RESEARCH TOOLS</p>
+      <button class="tool-tab" data-module="peer_review">Peer Review Assistant</button>
+      <button class="tool-tab" data-module="data_analysis">Data Analysis</button>
+      <button class="tool-tab" data-module="citation">Citation Assistant</button>
+      <button class="tool-tab" data-module="research_gap">Research Gap Analysis</button>
+    </aside>
+    <section class="studio-main">
+      <div class="studio-title"><div><span class="eyebrow">SELECTED TOOL</span><h3 id="selectedTitle">Academic Assistant</h3></div><span class="status-pill">AI workspace</span></div>
+      <label for="prompt">What would you like to work on?</label>
+      <textarea id="prompt" placeholder="Enter your research topic, question, source text or instructions..."></textarea>
+      <div class="controls">
+        <label>Language<select id="language"><option>English</option><option>Hindi</option></select></label>
+        <label>Response length<select id="length"><option>Detailed</option><option>Medium</option><option>Short</option></select></label>
+        <label>Model routing<select id="route"><option value="auto">Automatic</option><option value="writing">Writing</option><option value="reasoning">Reasoning</option><option value="literature">Literature</option><option value="data">Data analysis</option><option value="review">Peer review</option><option value="verification">Verification</option><option value="fast">Fast response</option></select></label>
+      </div>
+      <div class="run-row"><button class="btn btn-primary btn-large" id="runBtn">Generate response <span>→</span></button><span id="runStatus">Connect your API to start.</span></div>
+      <div class="result-wrap"><div class="result-head"><b>Workspace output</b><button class="btn btn-quiet" id="copyBtn">Copy output</button></div><pre id="output">Your generated content will appear here.</pre></div>
+      <p class="disclaimer">Academic integrity note: AI output should be checked against original sources. The system is designed not to invent references, data or research findings.</p>
+    </section>
+  </div>
+</section>
+
+<section class="section how-section" id="how"><div class="section-heading"><span class="eyebrow">SIMPLE TO GET STARTED</span><h2>A clearer way to work on research</h2></div><div class="steps"><div><b>01</b><h3>Choose a tool</h3><p>Select the research task that matches what you need.</p></div><div><b>02</b><h3>Share your context</h3><p>Add your topic, instructions or source material.</p></div><div><b>03</b><h3>Review and refine</h3><p>Use the response as a starting point and verify important details.</p></div></div></section>
+</main>
+
+<footer><a class="brand footer-brand" href="#"><span class="brand-mark">R</span><span>RESEARCHER <b>HU</b><small>RESEARCH SMARTER. DISCOVER MORE.</small></span></a><p>AI-powered academic research workspace.</p><span>© <span id="year"></span> RESEARCHER HU</span></footer>
+
+<div class="modal-backdrop" id="authModal" aria-hidden="true">
+  <div class="auth-modal">
+    <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+    <span class="eyebrow">WELCOME TO RESEARCHER HU</span><h2 id="authTitle">Create your account</h2>
+    <p id="authIntro">Sign up to begin your research workspace.</p>
+    <form id="authForm"><label>Email address<input id="authEmail" type="email" autocomplete="email" required placeholder="you@example.com"></label><label>Password<input id="authPassword" type="password" minlength="8" autocomplete="current-password" required placeholder="At least 8 characters"></label><button class="btn btn-primary btn-large full" id="authSubmit" type="submit">Create account</button></form>
+    <p class="auth-switch" id="authSwitch">Already registered? <button type="button" id="switchAuth">Log in</button></p><p class="auth-message" id="authMessage"></p>
+    <p class="tiny-note">Login/signup works after Supabase URL and public anon key are configured in frontend/config.js.</p>
+  </div>
+</div>
+</body>
+</html>
